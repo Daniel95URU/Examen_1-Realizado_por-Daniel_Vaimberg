@@ -1,8 +1,8 @@
 /***********************************************************************************************************************************************
-Elaborar un programa que, dada una sección de estudiantes, y las notas de los cortes de cada uno, determine si aprobó o no y en cuál categoría quedó:
-Sobresaliente: 19 – 20, Muy bueno: 16 – 18, Bueno: 13 – 15, Regular: 10 – 12, Mejorable: 6 – 10, Deficiente: el resto
-Estadísticas de la sección: promedio, cantidad de aprobados, cantidad de reprobados, total de estudiantes de la sección (no es dato de entrada...). 
-Nota importante, el número de estudiantes NO es dato de entrada. Su programa debe contar el número total de los estudiantes.
+Elaborar un programa que, dada una secciÃ³n de estudiantes, y las notas de los cortes de cada uno, determine si aprobÃ³ o no y en cuÃ¡l categorÃ­a quedÃ³:
+Sobresaliente: 19 â€“ 20, Muy bueno: 16 â€“ 18, Bueno: 13 â€“ 15, Regular: 10 â€“ 12, Mejorable: 6 â€“ 10, Deficiente: el resto
+EstadÃ­sticas de la secciÃ³n: promedio, cantidad de aprobados, cantidad de reprobados, total de estudiantes de la secciÃ³n (no es dato de entrada...). 
+Nota importante, el nÃºmero de estudiantes NO es dato de entrada. Su programa debe contar el nÃºmero total de los estudiantes.
 *************************************************************************************************************************************************/
 
 #include <iostream>
@@ -22,15 +22,15 @@ int main(){
 
 	do{
 	
-		printf("Ingrese la seccion a evaluar: ");                                			 //Seccion que se evaluará a lo largo del programa.
+		printf("Ingrese la seccion a evaluar: ");                                			 //Seccion que se evaluarÃ¡ a lo largo del programa.
 		scanf("%s", &seccion);
 		printf("\nUsted selecciono la seccion %.2s\n", seccion);
 		printf("\nAhora debe ingresar los datos de la seccion\n");
-			printf("Cual sera el porcentaje asignado al primer corte de notas?: ");             					//Aquí se busca almacenar en la memoria el porcentaje que se desea calcular para la nota del corte 1 del estudiante. 
+			printf("Cual sera el numero del porcentaje asignado al primer corte de notas?: ");             					//AquÃ­ se busca almacenar en la memoria el porcentaje que se desea calcular para la nota del corte 1 del estudiante. 
 				scanf("%f", &porcentaje1);
 				
 			
-				if(porcentaje1 < 1 || porcentaje1 >= 100){									//De ser mayor o igual a 100 el porcentaje del corte numero 2 quedaría neutralizado o negativo.
+				if(porcentaje1 < 1 || porcentaje1 >= 100){									//De ser mayor o igual a 100 el porcentaje del corte numero 2 quedarÃ­a neutralizado o negativo.
 				
 					printf("Colocar un digito que sea del 1 al 99");
 					return 0;
@@ -39,14 +39,14 @@ int main(){
 			
 		do{
 		
-			printf("Ingresa el nombre del estudiante: ");                      				 //Nombre y apellido del estudiante cuyos datos se recogerán para sacar la estadística de la sección.
+			printf("Ingresa el nombre del estudiante: ");                      				 //Nombre y apellido del estudiante cuyos datos se recogerÃ¡n para sacar la estadÃ­stica de la secciÃ³n.
 			scanf("%s", &estudiante);
 			printf("Ingresa el apellido del estudiante: ");
 			scanf("%s", apellido);
  
 			
 			do{
-				printf("\nIngrese cuantas notas tiene el corte numero 1 en la seccion %.2s: ", seccion);				//Aquí se busca determinar el numero de notas a emplear para el corte 1.
+				printf("\nIngrese cuantas notas tiene el corte numero 1 en la seccion %.2s: ", seccion);				//AquÃ­ se busca determinar el numero de notas a emplear para el corte 1.
 				scanf("%d", &NotasDelCorte1);
 				printf("Ingresa la/s nota/s del primer corte de %s %s: ", estudiante, apellido);
 				
@@ -81,7 +81,7 @@ int main(){
 			printf("\nAhora digite los parametros del corte numero 2\n");
 		
 			do{
-				porcentaje2 = 100 - porcentaje1;                                                         	//Mas adelante este valor permitirá completar la nota porcentual final.
+				porcentaje2 = 100 - porcentaje1;                                                         	//Mas adelante este valor permitirÃ¡ completar la nota porcentual final.
 				printf("\nIngrese cuantas notas tiene el corte numero 2 en la seccion %.2s: ", seccion);
 				scanf("%d", &NotasDelCorte2);
 				printf("Ingresa la/s nota/s del segundo corte de %s %s: ", estudiante, apellido);
@@ -106,7 +106,7 @@ int main(){
 				printf("\nTe equivocaste en algun digito? \n 1 - Seguir, 2 - Volver\n : ");
 				scanf("%d", &opcion2);
 				
-				if(opcion2 == 2){																					//Este if sigue la lógica de restablecer lo valores de las vairables indicadas a 0.
+				if(opcion2 == 2){																					//Este if sigue la lÃ³gica de restablecer lo valores de las vairables indicadas a 0.
 					corte2 = 0;
 					C2 = 0;
 					acum2 = 0;
@@ -140,13 +140,13 @@ int main(){
 			corte1 = acum1*porcentaje1/100;   																			//Calculo de operaciones de los cortes 1 y 2 para el promedio de seccion. 						                                   
 			corte2 = acum2*porcentaje2/100;
 		printf("\n\n--------------------------------------------------------------------------------------------------------------------\n");
-		printf("Busca ingresar los datos de otro estudiante de la seccion %.2s?\n", seccion);							//Aquí se le informará al usuario si busca ingresar otros datos de diferentes estudiante.
+		printf("Busca ingresar los datos de otro estudiante de la seccion %.2s?\n", seccion);							//AquÃ­ se le informarÃ¡ al usuario si busca ingresar otros datos de diferentes estudiante.
 		printf("1 - Si, 2 - No\n");
-		scanf("%d", &opcion3);																					//En caso de negativo (2) se sigue la línea de programación inicial
-		cantidad++;																								//Al finalizar el bucle de datos del estudiante se aumenta 1 la vairbale de cantidad para contabilizar el número de alumnos.
+		scanf("%d", &opcion3);																					//En caso de negativo (2) se sigue la lÃ­nea de programaciÃ³n inicial
+		cantidad++;																								//Al finalizar el bucle de datos del estudiante se aumenta 1 la vairbale de cantidad para contabilizar el nÃºmero de alumnos.
 	}while (opcion3 == 1);
 		
-		printf(" \nLas estadisticas de la seccion %.2s son: \n", seccion);										//Se evaluan las estadísticas de la sección con los datos recopilados.
+		printf(" \nLas estadisticas de la seccion %.2s son: \n", seccion);										//Se evaluan las estadÃ­sticas de la secciÃ³n con los datos recopilados.
 		printf("\n---------------------------------------------------------------------------------------------------------------------\n");
 		printf(" La cantidad de estudiantes en la seccion %.2s es de: %d\n", seccion, cantidad);
 		printf(" \n Aprobaron un total de %d estudiantes\n", aprobados);	
